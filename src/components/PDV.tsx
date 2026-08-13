@@ -10,7 +10,7 @@ import {
   X, 
   ShoppingCart, 
   CreditCard, 
-  Money,
+  Banknote,
   Receipt,
   Barcode
 } from 'lucide-react';
@@ -50,7 +50,7 @@ export const PDV: React.FC = () => {
   ];
 
   const paymentMethods: PaymentMethod[] = [
-    { id: 'dinheiro', name: 'Dinheiro', icon: Money },
+    { id: 'dinheiro', name: 'Dinheiro', icon: Banknote },
     { id: 'cartao', name: 'Cartão', icon: CreditCard },
     { id: 'pix', name: 'PIX', icon: Receipt },
   ];

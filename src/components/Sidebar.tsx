@@ -7,7 +7,8 @@ import {
   FileText, 
   Settings,
   BarChart3,
-  Calendar
+  Calendar,
+  User
 } from 'lucide-react';
 
 interface SidebarProps {}
