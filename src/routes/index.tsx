@@ -20,6 +20,7 @@ import {
   Twitter,
   ChevronRight,
 } from "lucide-react";
+import { BookingForm } from "@/components/BookingForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
