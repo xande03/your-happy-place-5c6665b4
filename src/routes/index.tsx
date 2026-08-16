@@ -20,6 +20,7 @@ import {
   Twitter,
   ChevronRight,
 } from "lucide-react";
+import { BookingForm } from "@/components/BookingForm";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -66,12 +67,14 @@ function LandingPage() {
               Experiência
             </a>
           </div>
-          <Button
-            variant="outline"
-            className="border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300"
-          >
-            Agendar Visita
-          </Button>
+          <a href="#booking">
+            <Button
+              variant="outline"
+              className="border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300"
+            >
+              Agendar Visita
+            </Button>
+          </a>
         </nav>
       </header>
 
@@ -100,12 +103,14 @@ function LandingPage() {
                 <Button className="bg-gold hover:bg-gold/90 text-white px-8 py-6 text-lg rounded-none transition-all hover:scale-105">
                   Explore a Coleção Exclusiva
                 </Button>
-                <Button
-                  variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-black px-8 py-6 text-lg rounded-none"
-                >
-                  Agende Sua Experiência Privada
-                </Button>
+                <a href="#booking">
+                  <Button
+                    variant="outline"
+                    className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-black px-8 py-6 text-lg rounded-none w-full sm:w-auto"
+                  >
+                    Agende Sua Experiência Privada
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -365,8 +370,8 @@ function LandingPage() {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="relative py-24 overflow-hidden bg-luxury-black">
+        {/* Final CTA & Booking Form */}
+        <section id="booking" className="relative py-24 overflow-hidden bg-luxury-black">
           <div className="absolute inset-0 z-0">
             <img
               src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=2000"
@@ -374,24 +379,26 @@ function LandingPage() {
               className="w-full h-full object-cover opacity-30"
             />
           </div>
-          <div className="container mx-auto px-6 relative z-10 text-center">
-            <h2 className="text-4xl md:text-6xl font-serif text-white mb-8">
-              Eleve Seu Estilo. <br /> Descubra a Nossa Coleção Agora.
-            </h2>
-            <p className="text-luxury-ivory/60 max-w-2xl mx-auto mb-12 text-lg">
-              Receba uma consultoria de estilo personalizada ao agendar sua
-              visita em nossa boutique. A exclusividade espera por você.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <Button className="bg-gold hover:bg-gold/90 text-white px-10 py-7 text-lg rounded-none">
-                Ver Todas as Coleções
-              </Button>
-              <Button
-                variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-black px-10 py-7 text-lg rounded-none"
-              >
-                Agendar Sua Experiência Personalizada
-              </Button>
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="text-left">
+                <h2 className="text-4xl md:text-6xl font-serif text-white mb-8">
+                  Eleve Seu Estilo. <br /> Descubra a Nossa Coleção Agora.
+                </h2>
+                <p className="text-luxury-ivory/60 max-w-xl mb-12 text-lg leading-relaxed">
+                  Receba uma consultoria de estilo personalizada ao agendar sua
+                  visita em nossa boutique. A exclusividade espera por você.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <Button className="bg-gold hover:bg-gold/90 text-white px-10 py-7 text-lg rounded-none">
+                    Ver Todas as Coleções
+                  </Button>
+                </div>
+              </div>
+              
+              <div className="animate-in fade-in slide-in-from-right-8 duration-1000">
+                <BookingForm />
+              </div>
             </div>
           </div>
         </section>
