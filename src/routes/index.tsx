@@ -67,12 +67,14 @@ function LandingPage() {
               Experiência
             </a>
           </div>
-          <Button
-            variant="outline"
-            className="border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300"
-          >
-            Agendar Visita
-          </Button>
+          <a href="#booking">
+            <Button
+              variant="outline"
+              className="border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300"
+            >
+              Agendar Visita
+            </Button>
+          </a>
         </nav>
       </header>
 
