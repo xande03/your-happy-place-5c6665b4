@@ -103,12 +103,14 @@ function LandingPage() {
                 <Button className="bg-gold hover:bg-gold/90 text-white px-8 py-6 text-lg rounded-none transition-all hover:scale-105">
                   Explore a Coleção Exclusiva
                 </Button>
-                <Button
-                  variant="outline"
-                  className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-black px-8 py-6 text-lg rounded-none"
-                >
-                  Agende Sua Experiência Privada
-                </Button>
+                <a href="#booking">
+                  <Button
+                    variant="outline"
+                    className="bg-transparent border-white text-white hover:bg-white hover:text-luxury-black px-8 py-6 text-lg rounded-none w-full sm:w-auto"
+                  >
+                    Agende Sua Experiência Privada
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
