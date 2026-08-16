@@ -413,10 +413,15 @@ function LandingPage() {
             </h2>
             <div className="max-w-5xl mx-auto shadow-2xl relative group">
               <video 
-                src="https://id-preview--80b3a5c8-ebb2-4421-903a-ce6fdb936606.lovable.app/aura-promo.mp4" 
+                src="/aura-promo.mp4" 
                 controls 
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full aspect-video object-cover"
                 poster="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=1920"
+
               />
               <div className="absolute -inset-4 border border-gold/20 -z-10 group-hover:inset-0 transition-all duration-500"></div>
             </div>
