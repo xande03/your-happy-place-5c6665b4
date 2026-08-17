@@ -421,6 +421,12 @@ function LandingPage() {
                 playsInline
                 className="w-full h-full object-cover relative z-10"
                 poster="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=1920"
+                onPlay={() => {
+                  console.log("Analytics: Video Started");
+                }}
+                onPause={() => {
+                  console.log("Analytics: Video Paused");
+                }}
                 onLoadStart={(e) => {
                   const video = e.currentTarget;
                   video.parentElement?.classList.add('is-loading');
@@ -433,7 +439,7 @@ function LandingPage() {
                   const video = e.currentTarget;
                   video.parentElement?.classList.remove('is-loading');
                   video.parentElement?.classList.add('has-error');
-                  console.error("Erro ao carregar o vídeo promocional.");
+                  console.error("Analytics: Video Playback Failed");
                 }}
               />
               
