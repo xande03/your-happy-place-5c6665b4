@@ -47,6 +47,9 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   return (
     <div className="min-h-screen font-sans bg-background text-foreground selection:bg-gold/30">
+      <div className="bg-gold/10 text-gold text-[10px] py-1 text-center font-medium tracking-widest uppercase">
+        sdsd
+      </div>
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
         <nav className="container mx-auto px-6 h-20 flex items-center justify-between">
