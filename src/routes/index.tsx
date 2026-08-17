@@ -411,7 +411,7 @@ function LandingPage() {
             <h2 className="text-4xl md:text-5xl font-serif text-luxury-black mb-12">
               A Essência do Luxo em Movimento.
             </h2>
-            <div className="max-w-5xl mx-auto shadow-2xl relative group">
+            <div className="max-w-5xl mx-auto shadow-2xl relative group bg-luxury-black aspect-video flex items-center justify-center overflow-hidden">
               <video 
                 src="/video/aura-promo.mp4" 
                 controls 
@@ -419,9 +419,42 @@ function LandingPage() {
                 muted
                 loop
                 playsInline
-                className="w-full aspect-video object-cover"
+                className="w-full h-full object-cover relative z-10"
                 poster="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=1920"
+                onLoadStart={(e) => {
+                  const video = e.currentTarget;
+                  video.parentElement?.classList.add('is-loading');
+                }}
+                onCanPlay={(e) => {
+                  const video = e.currentTarget;
+                  video.parentElement?.classList.remove('is-loading');
+                }}
+                onError={(e) => {
+                  const video = e.currentTarget;
+                  video.parentElement?.classList.remove('is-loading');
+                  video.parentElement?.classList.add('has-error');
+                  console.error("Erro ao carregar o vídeo promocional.");
+                }}
               />
+              
+              {/* Loading State Overlay */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-luxury-black z-20 opacity-0 pointer-events-none transition-opacity duration-300 [.group.is-loading_&]:opacity-100">
+                <div className="w-12 h-12 border-2 border-gold/20 border-t-gold rounded-full animate-spin mb-4"></div>
+                <p className="text-gold font-serif text-sm tracking-widest uppercase">Carregando Experiência...</p>
+              </div>
+
+              {/* Error State Overlay */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-luxury-black z-30 opacity-0 pointer-events-none transition-opacity duration-300 [.group.has-error_&]:opacity-100 px-6">
+                <p className="text-white font-serif text-xl mb-6">O vídeo não pôde ser reproduzido.</p>
+                <Button 
+                  variant="outline" 
+                  className="border-gold text-gold hover:bg-gold hover:text-white"
+                  onClick={() => window.location.reload()}
+                >
+                  Tentar Novamente
+                </Button>
+              </div>
+
               <div className="absolute -inset-4 border border-gold/20 -z-10 group-hover:inset-0 transition-all duration-500"></div>
             </div>
           </div>
