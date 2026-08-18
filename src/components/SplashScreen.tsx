@@ -1,40 +1,21 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
 
 interface SplashScreenProps {
-  onComplete?: () => void;
-  duration?: number;
+  className?: string;
 }
 
-export function SplashScreen({ onComplete, duration = 3000 }: SplashScreenProps) {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-      onComplete?.();
-    }, duration);
-
-    return () => clearTimeout(timer);
-  }, [duration, onComplete]);
-
-  if (!isVisible) return null;
-
+export function SplashScreen({ className }: SplashScreenProps) {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      <div className="text-center space-y-6 animate-fade-in">
-        <div className="space-y-2">
-          <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
-            Olá,
-          </h1>
-          <h2 className="text-3xl md:text-5xl font-semibold text-blue-300 tracking-wide">
-            membros
-          </h2>
-        </div>
-        
-        <div className="flex justify-center">
-          <div className="w-20 h-1 bg-blue-400 rounded-full animate-pulse"></div>
-        </div>
+    <div className={cn(
+      'flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100',
+      className
+    )}>
+      <div className="text-center p-8 rounded-lg bg-white/80 backdrop-blur-sm shadow-lg">
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-4 animate-pulse">
+          Olá Mundo
+        </h1>
+        <p className="text-lg text-gray-600">Bem-vindo ao seu lugar feliz</p>
       </div>
     </div>
   );
