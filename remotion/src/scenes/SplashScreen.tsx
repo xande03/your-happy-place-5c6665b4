@@ -14,7 +14,7 @@ export const SplashScreen: React.FC = () => {
             transition: 'transform 0.3s ease'
           }}
         >
-          Olá Mundo
+          Olá. Pessoal
         </h1>
         <p className="text-lg text-gray-600">Bem-vindo ao seu lugar feliz</p>
       </div>
