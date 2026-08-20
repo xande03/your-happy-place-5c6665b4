@@ -123,6 +123,11 @@ function LandingPage() {
               Descobrir
             </span>
             <div className="w-px h-12 bg-white/20"></div>
+            <img 
+              src="/gaivota.webp" 
+              alt="Gaivota" 
+              className="absolute -top-20 left-1/2 -translate-x-1/2 w-16 h-16 opacity-70 animate-pulse"
+            />
           </div>
         </section>
 
