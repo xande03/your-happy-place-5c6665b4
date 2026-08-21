@@ -48,6 +48,7 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   return (
     <div className="min-h-screen font-sans bg-background text-foreground selection:bg-gold/30">
+      <SplashScreen />
       <div className="bg-gold/10 text-gold text-[10px] py-1 text-center font-medium tracking-widest uppercase">
         verifique se há uma tela de splashscreen no projeto
       </div>
