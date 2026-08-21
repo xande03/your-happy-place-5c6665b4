@@ -27,9 +27,9 @@ export const SplashScreen: React.FC = () => {
         }}
         className="text-center"
       >
-        <h1 className="text-9xl tracking-tighter mb-4">AURA</h1>
+        <h1 className="text-9xl tracking-tighter mb-4">olá, designers</h1>
         <div className="h-1 w-32 bg-[#D4AF37] mx-auto mb-8" />
-        <p className="text-3xl tracking-[0.3em] uppercase text-[#D4AF37]/80">Luxury Leathercraft</p>
+        <p className="text-3xl tracking-[0.3em] uppercase text-[#D4AF37]/80">Aura Luxury</p>
       </div>
     </AbsoluteFill>
   );
