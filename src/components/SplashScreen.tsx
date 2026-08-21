@@ -1,12 +1,39 @@
-import React from 'react';
+import { useEffect, useState } from "react";
 
-const SplashScreen = () => {
+/**
+ * Splash de abertura no padrão Aura (preto/dourado).
+ * Exibido por ~2s e desaparece com fade.
+ */
+const SplashScreen = ({ duration = 2000 }: { duration?: number }) => {
+  const [hidden, setHidden] = useState(false);
+  const [gone, setGone] = useState(false);
+
+  useEffect(() => {
+    const t1 = window.setTimeout(() => setHidden(true), duration);
+    const t2 = window.setTimeout(() => setGone(true), duration + 700);
+    return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, [duration]);
+
+  if (gone) return null;
+
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="text-center p-8 bg-white rounded-lg shadow-lg max-w-md w-full">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Olá, designers</h1>
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-        <p className="text-gray-600 mt-4">Carregando sua experiência...</p>
+    <div
+      aria-hidden="true"
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-luxury-black transition-opacity duration-700 ${
+        hidden ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
+    >
+      <div className="animate-in fade-in slide-in-from-bottom-2 duration-1000 text-center">
+        <h1 className="font-serif text-5xl md:text-6xl tracking-[0.35em] text-gold">
+          AURA
+        </h1>
+        <div className="mx-auto mt-6 h-px w-24 bg-gold/60" />
+        <p className="mt-6 text-[10px] uppercase tracking-[0.4em] text-gold/70">
+          Luxury Leathercraft
+        </p>
       </div>
     </div>
   );
