@@ -22,16 +22,25 @@ const SplashScreen = ({ duration = 2000 }: { duration?: number }) => {
   return (
     <div
       aria-hidden="true"
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-luxury-black transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center transition-opacity duration-700 ${
         hidden ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
+      style={{
+        backgroundImage: "url('/maq 219.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
-      <div className="animate-in fade-in slide-in-from-bottom-2 duration-1000 text-center">
-        <h1 className="font-serif text-5xl md:text-6xl tracking-[0.35em] text-gold">
+      {/* Overlay para melhorar a legibilidade do texto */}
+      <div className="absolute inset-0 bg-black/60" />
+      
+      <div className="animate-in fade-in slide-in-from-bottom-2 duration-1000 text-center relative z-10">
+        <h1 className="font-serif text-5xl md:text-6xl tracking-[0.35em] text-gold drop-shadow-lg">
           AURA
         </h1>
         <div className="mx-auto mt-6 h-px w-24 bg-gold/60" />
-        <p className="mt-6 text-[10px] uppercase tracking-[0.4em] text-gold/70">
+        <p className="mt-6 text-[10px] uppercase tracking-[0.4em] text-gold/70 drop-shadow-md">
           Luxury Leathercraft
         </p>
       </div>
