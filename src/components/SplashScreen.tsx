@@ -26,7 +26,7 @@ const SplashScreen = ({ duration = 2000 }: { duration?: number }) => {
         hidden ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
       style={{
-        backgroundImage: "url('/maq 219.png')",
+        backgroundImage: "url('/HOMEM DE FERRO.jfif')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'

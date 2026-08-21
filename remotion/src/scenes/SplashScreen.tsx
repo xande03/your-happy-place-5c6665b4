@@ -21,9 +21,22 @@ export const SplashScreen: React.FC = () => {
     <AbsoluteFill className="items-center justify-center bg-[#0A0A0A] text-white">
       <div 
         style={{ 
+          backgroundImage: "url('/HOMEM DE FERRO.jfif')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          width: '100%',
+          height: '100%',
+          position: 'absolute'
+        }}
+      />
+      <div 
+        style={{ 
           fontFamily,
           opacity,
-          transform: `scale(${scale}) translateY(${y}px)`
+          transform: `scale(${scale}) translateY(${y}px)`,
+          position: 'relative',
+          zIndex: 10
         }}
         className="text-center"
       >
