@@ -584,6 +584,9 @@ function LandingPage() {
                 Cookies
               </a>
             </div>
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+              desenvolvido por Alexandre
+            </div>
           </div>
         </div>
       </footer>
