@@ -21,6 +21,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { BookingForm } from "@/components/BookingForm";
+import SplashScreen from "@/components/SplashScreen";
 
 export const Route = createFileRoute("/")({
   head: () => ({
