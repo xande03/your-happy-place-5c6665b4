@@ -40,7 +40,7 @@ const SplashScreen = ({ duration = 2000 }: { duration?: number }) => {
           AURA
         </h1>
         <p className="mt-4 text-lg md:text-xl tracking-[0.05em] text-gold/90 drop-shadow-md max-w-md mx-auto">
-          Bem-vindo ao mundo do luxo e artesanato
+          VERDADE ABSOLUTA
         </p>
         <div className="mx-auto mt-6 h-px w-24 bg-gold/60" />
         <p className="mt-6 text-[10px] uppercase tracking-[0.4em] text-gold/70 drop-shadow-md">
