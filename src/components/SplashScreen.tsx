@@ -37,7 +37,7 @@ const SplashScreen = ({ duration = 2000 }: { duration?: number }) => {
       
       {/* Seagull image as decorative element */}
       <img 
-        src="/gaivota.webp" 
+        src="/gaivota.png" 
         alt="Gaivota" 
         className="absolute top-10 left-1/2 -translate-x-1/2 w-20 h-20 opacity-70 animate-pulse"
       />

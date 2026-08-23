@@ -44,7 +44,7 @@ export const SplashScreen: React.FC = () => {
         }}
       >
         <img 
-          src="/gaivota.webp" 
+          src="/gaivota.png" 
           alt="Gaivota" 
           className="w-16 h-16"
         />
