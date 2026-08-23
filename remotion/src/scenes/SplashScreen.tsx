@@ -17,6 +17,9 @@ export const SplashScreen: React.FC = () => {
   const scale = interpolate(titleSpring, [0, 1], [0.9, 1]);
   const y = interpolate(titleSpring, [0, 1], [40, 0]);
 
+  const seagollOpacity = interpolate(frame, [0, 15], [0, 0.7]);
+  const seagollY = interpolate(frame, [0, 15], [-20, 0]);
+
   return (
     <AbsoluteFill className="items-center justify-center bg-[#0A0A0A] text-white">
       <div 
@@ -30,6 +33,22 @@ export const SplashScreen: React.FC = () => {
           position: 'absolute'
         }}
       />
+      <div 
+        style={{ 
+          opacity: seagollOpacity,
+          transform: `translateY(${seagollY}px)`,
+          position: 'absolute',
+          top: '10%',
+          left: '50%',
+          transform: `translateX(-50%) translateY(${seagollY}px)`
+        }}
+      >
+        <img 
+          src="/gaivota.webp" 
+          alt="Gaivota" 
+          className="w-16 h-16"
+        />
+      </div>
       <div 
         style={{ 
           fontFamily,

@@ -35,6 +35,13 @@ const SplashScreen = ({ duration = 2000 }: { duration?: number }) => {
       {/* Overlay para melhorar a legibilidade do texto */}
       <div className="absolute inset-0 bg-black/60" />
       
+      {/* Seagull image as decorative element */}
+      <img 
+        src="/gaivota.webp" 
+        alt="Gaivota" 
+        className="absolute top-10 left-1/2 -translate-x-1/2 w-20 h-20 opacity-70 animate-pulse"
+      />
+      
       <div className="animate-in fade-in slide-in-from-bottom-2 duration-1000 text-center relative z-10">
         <h1 className="font-serif text-5xl md:text-6xl tracking-[0.35em] text-gold drop-shadow-lg">
           AURA
