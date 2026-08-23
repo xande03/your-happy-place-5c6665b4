@@ -73,43 +73,43 @@ export const Sidebar: React.FC<SidebarProps> = () => {
   ];
 
   return (
-    <div className="w-64 bg-gradient-to-b from-blue-50 to-white shadow-lg h-full flex flex-col border-r border-gray-100">
+    <div className="w-64 bg-gradient-to-b from-blue-600 to-blue-700 shadow-2xl h-full flex flex-col border-r border-blue-800">
       {/* Logo Section */}
-      <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-blue-600 to-blue-700">
+      <div className="p-6 border-b border-blue-500 bg-gradient-to-r from-blue-700 to-blue-800">
         <div className="flex items-center space-x-3">
-          <div className="bg-white p-2 rounded-lg shadow-md">
-            <Package className="h-6 w-6 text-blue-600" />
+          <div className="bg-white p-3 rounded-xl shadow-lg transform hover:scale-105 transition-transform">
+            <Package className="h-7 w-7 text-blue-600" />
           </div>
           <div>
-            <h2 className="font-bold text-xl text-white">Farmácia Saúde+</h2>
-            <p className="text-xs text-blue-100">Sistema de Gestão</p>
+            <h2 className="font-bold text-xl text-white drop-shadow-lg">Farmácia Saúde+</h2>
+            <p className="text-xs text-blue-100 font-medium">Sistema de Gestão</p>
           </div>
         </div>
       </div>
       
       {/* Navigation */}
-      <nav className="flex-1 px-4 py-6 overflow-y-auto">
+      <nav className="flex-1 px-4 py-6 overflow-y-auto bg-gradient-to-b from-blue-600/50 to-blue-700/30">
         {menuSections.map((section) => (
-          <div key={section.title} className="mb-6">
-            <div className="flex items-center mb-3">
-              <div className="h-px bg-gray-200 flex-1"></div>
-              <span className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+          <div key={section.title} className="mb-8">
+            <div className="flex items-center mb-4">
+              <div className="h-px bg-blue-400 flex-1"></div>
+              <span className="px-4 text-xs font-bold text-blue-100 uppercase tracking-wider bg-blue-600/50 px-3 py-1 rounded-full">
                 {section.title}
               </span>
-              <div className="h-px bg-gray-200 flex-1"></div>
+              <div className="h-px bg-blue-400 flex-1"></div>
             </div>
             
-            <ul className="space-y-1">
+            <ul className="space-y-2">
               {section.items.map((item) => (
                 <li key={item.id}>
                   <a
                     href={item.href}
-                    className="flex items-center space-x-3 px-4 py-3 text-gray-700 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-all duration-200 hover:shadow-sm hover:border-l-4 hover:border-blue-500"
+                    className="flex items-center space-x-3 px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 hover:text-white hover:shadow-lg hover:border-l-4 hover:border-white transition-all duration-300 transform hover:translate-x-1"
                   >
-                    <div className="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600 transition-colors">
+                    <div className="p-3 rounded-xl bg-white/20 text-white/80 hover:bg-white/30 transition-all duration-300">
                       <item.icon className="h-5 w-5" />
                     </div>
-                    <span className="font-medium text-gray-700">{item.name}</span>
+                    <span className="font-semibold text-white/90">{item.name}</span>
                   </a>
                 </li>
               ))}
@@ -119,18 +119,18 @@ export const Sidebar: React.FC<SidebarProps> = () => {
       </nav>
       
       {/* User Profile Section */}
-      <div className="p-4 border-t border-gray-200 bg-gradient-to-t from-gray-50 to-white">
-        <div className="flex items-center space-x-3 p-3 rounded-lg bg-white shadow-sm border border-gray-100">
-          <div className="h-12 w-12 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
+      <div className="p-4 border-t border-blue-500 bg-gradient-to-t from-blue-700/50 to-blue-800/50">
+        <div className="flex items-center space-x-3 p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl">
+          <div className="h-12 w-12 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-500 flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform">
             <User className="h-6 w-6 text-white" />
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-gray-800 truncate">Administrador</p>
-            <p className="text-xs text-gray-500 truncate">admin@farmacia.com</p>
+            <p className="text-sm font-bold text-white truncate">Administrador</p>
+            <p className="text-xs text-blue-100 truncate">admin@farmacia.com</p>
           </div>
         </div>
-        <div className="mt-3 text-center">
-          <button className="text-xs text-blue-600 hover:text-blue-700 font-medium transition-colors">
+        <div className="mt-4 text-center">
+          <button className="text-xs text-white/80 hover:text-white font-bold py-2 px-4 rounded-xl hover:bg-white/10 transition-all duration-300 w-full">
             Sair da conta
           </button>
         </div>
