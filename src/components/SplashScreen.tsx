@@ -43,14 +43,11 @@ const SplashScreen = ({ duration = 2000 }: { duration?: number }) => {
       />
       
       <div className="animate-in fade-in slide-in-from-bottom-2 duration-1000 text-center relative z-10">
-        <h1 className="font-serif text-5xl md:text-6xl tracking-[0.35em] text-gold drop-shadow-lg">
-          AURA
+        <h1 className="font-serif text-5xl md:text-6xl tracking-[0.35em] text-green-500 drop-shadow-lg">
+          MAJESTADE SEMPRE REINA
         </h1>
-        <p className="mt-4 text-lg md:text-xl tracking-[0.05em] text-gold/90 drop-shadow-md max-w-md mx-auto">
-          ola, mundo
-        </p>
-        <div className="mx-auto mt-6 h-px w-24 bg-gold/60" />
-        <p className="mt-6 text-[10px] uppercase tracking-[0.4em] text-gold/70 drop-shadow-md">
+        <div className="mx-auto mt-6 h-px w-24 bg-green-500/60" />
+        <p className="mt-6 text-[10px] uppercase tracking-[0.4em] text-green-500/70 drop-shadow-md">
           Luxury Leathercraft
         </p>
       </div>
