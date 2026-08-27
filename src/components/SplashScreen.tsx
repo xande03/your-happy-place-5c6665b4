@@ -1,37 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import { PillBar } from './PillBar';
-import { Button } from './ui/button';
-import { ArrowRight } from 'lucide-react';
+import { PillBarFixed } from './PillBar';
+import { Button } from '@/components/ui/button';
+import { ChevronDown } from 'lucide-react';
 
 export function SplashScreen() {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-luxury-black/10 to-luxury-ivory/20"></div>
+    <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Fundo com efeito parallax */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-gold/10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('/HOMEM DE FERRO.png')] bg-cover bg-center bg-no-repeat opacity-20"></div>
+      </div>
       
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <PillBar 
-          title="Aura Boutique" 
-          subtitle="Sua experiência de luxo começa aqui"
-          actions={
-            <Button 
-              variant="outline" 
-              className="bg-white/80 hover:bg-white text-luxury-black border-luxury-ivory rounded-full px-6 py-2 text-sm font-medium transition-all hover:scale-105"
-              onClick={() => setIsVisible(false)}
-            >
-              Entrar <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          }
-        />
+      {/* Barra superior fixa */}
+      <PillBarFixed>
+        <Button 
+          variant="ghost" 
+          className="text-luxury-black hover:bg-gold/20 transition-colors"
+          size="sm"
+        >
+          Entrar
+        </Button>
+        <Button 
+          className="bg-luxury-black text-gold hover:bg-luxury-black/90 transition-colors"
+          size="sm"
+        >
+          Agendar Consultoria
+        </Button>
+      </PillBarFixed>
+      
+      {/* Conteúdo principal */}
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-7xl font-bold text-luxury-black mb-6 font-serif">
+          Aura Boutique
+        </h1>
+        <p className="text-xl md:text-2xl text-luxury-black/80 mb-12 max-w-2xl mx-auto">
+          Experiências de luxo sob medida para você. Descubra a arte do bem-estar e da elegância.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <Button 
+            className="bg-gold hover:bg-gold/90 text-luxury-black text-lg py-3 px-8 rounded-none uppercase tracking-wider"
+            size="lg"
+          >
+            Explorar Coleções
+          </Button>
+          <Button 
+            variant="outline" 
+            className="border-luxury-black text-luxury-black hover:bg-luxury-black/10 text-lg py-3 px-8 rounded-none uppercase tracking-wider"
+            size="lg"
+          >
+            Agendar Consultoria
+          </Button>
+        </div>
+        
+        <div className="animate-bounce">
+          <ChevronDown className="h-8 w-8 text-luxury-black mx-auto" />
+        </div>
+      </div>
+      
+      {/* Elementos decorativos */}
+      <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+        <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent"></div>
       </div>
     </div>
   );
