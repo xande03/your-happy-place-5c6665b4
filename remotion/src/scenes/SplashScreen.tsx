@@ -24,7 +24,7 @@ export const SplashScreen: React.FC = () => {
     <AbsoluteFill className="items-center justify-center bg-[#0A0A0A] text-white">
       <div 
         style={{ 
-          backgroundImage: "url('/Adicione_uma_capivaa_ao_lado_deste_cachorro_2k_delpmaspu.png')",
+          backgroundImage: "url('/HOMEM DE FERRO.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -44,7 +44,7 @@ export const SplashScreen: React.FC = () => {
         }}
       >
         <img 
-          src="/gaivota.png" 
+          src="/gaivota.webp" 
           alt="Gaivota" 
           className="w-16 h-16"
         />
