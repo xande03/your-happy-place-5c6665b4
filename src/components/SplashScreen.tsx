@@ -26,7 +26,7 @@ const SplashScreen = ({ duration = 2000 }: { duration?: number }) => {
         hidden ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
       style={{
-        backgroundImage: "url('/HOMEM DE FERRO.jfif')",
+        backgroundImage: "url('/Adicione_uma_capivaa_ao_lado_deste_cachorro_2k_delpmaspu.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
