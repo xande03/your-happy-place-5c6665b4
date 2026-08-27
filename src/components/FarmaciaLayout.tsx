@@ -1,51 +1,37 @@
-import React from 'react';
-import { PillBar } from './PillBar';
-import { Button } from './ui/button';
-import { Bell, Settings, User } from 'lucide-react';
+import { PillBarFixed } from './PillBar';
+import { Button } from '@/components/ui/button';
+import { Bell, User } from 'lucide-react';
 
-interface FarmaciaLayoutProps {
-  children: React.ReactNode;
-}
-
-export function FarmaciaLayout({ children }: FarmaciaLayoutProps) {
+export function FarmaciaLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-luxury-ivory/50 to-luxury-black/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <PillBar 
-          title="Farmácia Aura" 
-          subtitle="Sua saúde em primeiro lugar"
-          actions={
-            <div className="flex items-center space-x-2 md:space-x-4">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="text-luxury-black hover:bg-luxury-ivory/50 rounded-full p-2"
-              >
-                <Bell className="h-5 w-5" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="text-luxury-black hover:bg-luxury-ivory/50 rounded-full p-2"
-              >
-                <Settings className="h-5 w-5" />
-              </Button>
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="text-luxury-black hover:bg-luxury-ivory/50 rounded-full p-2 flex items-center space-x-2"
-              >
-                <User className="h-4 w-4" />
-                <span className="hidden md:inline text-sm">Dr. Silva</span>
-              </Button>
-            </div>
-          }
-        />
-        
-        <div className="mt-8">
-          {children}
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-gold/5">
+      {/* Barra superior fixa */}
+      <PillBarFixed>
+        <div className="flex items-center space-x-4">
+          <div className="text-luxury-black text-sm font-medium">
+            Bem-vindo, Cliente
+          </div>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="text-luxury-black hover:bg-gold/20 transition-colors"
+          >
+            <Bell className="h-4 w-4" />
+          </Button>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="text-luxury-black hover:bg-gold/20 transition-colors"
+          >
+            <User className="h-4 w-4" />
+          </Button>
         </div>
-      </div>
+      </PillBarFixed>
+      
+      {/* Conteúdo principal */}
+      <main className="pt-20 pb-10">
+        {children}
+      </main>
     </div>
   );
 }
