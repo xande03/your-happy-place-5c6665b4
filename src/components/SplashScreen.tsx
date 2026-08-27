@@ -1,41 +1,37 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { PillBar } from './PillBar';
+import { Button } from './ui/button';
+import { ArrowRight } from 'lucide-react';
 
 export function SplashScreen() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <div className="w-full max-w-md">
+    <div className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+      <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-luxury-black/10 to-luxury-ivory/20"></div>
+      
+      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
         <PillBar 
           title="Aura Boutique" 
           subtitle="Sua experiência de luxo começa aqui"
           actions={
-            <>
-              <button className="text-sm font-medium text-indigo-600 hover:text-indigo-800">
-                Entrar
-              </button>
-              <button className="text-sm font-medium text-indigo-600 hover:text-indigo-800">
-                Cadastre-se
-              </button>
-            </>
+            <Button 
+              variant="outline" 
+              className="bg-white/80 hover:bg-white text-luxury-black border-luxury-ivory rounded-full px-6 py-2 text-sm font-medium transition-all hover:scale-105"
+              onClick={() => setIsVisible(false)}
+            >
+              Entrar <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
           }
         />
-        
-        <div className="mt-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Bem-vindo ao Aura</h2>
-          <p className="text-gray-600 mb-8">
-            Descubra nossa coleção exclusiva de produtos de luxo e serviços personalizados.
-          </p>
-          <div className="mb-8">
-            <img 
-              src="/HOMEM DE FERRO.png" 
-              alt="Aura Boutique" 
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
-          </div>
-          <button className="bg-indigo-600 text-white py-3 px-8 rounded-full font-medium hover:bg-indigo-700 transition-colors shadow-lg">
-            Explorar Coleção
-          </button>
-        </div>
       </div>
     </div>
   );
