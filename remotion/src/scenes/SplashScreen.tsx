@@ -21,7 +21,7 @@ export const SplashScreen: React.FC = () => {
   const seagollY = interpolate(frame, [0, 15], [-20, 0]);
 
   return (
-    <AbsoluteFill className="items-center justify-center bg-[#0A0A0A] text-white">
+    <AbsoluteFill className="items-center justify-center bg-blue-900 text-white">
       <div 
         style={{ 
           backgroundImage: "url('/HOMEM DE FERRO.png')",
@@ -30,7 +30,8 @@ export const SplashScreen: React.FC = () => {
           backgroundRepeat: 'no-repeat',
           width: '100%',
           height: '100%',
-          position: 'absolute'
+          position: 'absolute',
+          opacity: 0.5
         }}
       />
       <div 
